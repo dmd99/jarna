@@ -26,6 +26,7 @@
                         <span class="visually-hidden">unread messages</span>
                     </span>
                 </div>
+                {{-- //hellkc --}}
                 <div class="m-dropdown nav-icons">
                     @if(Auth::check() && Auth::user()->with('shop')->find(Auth::id())->shop->slug)
                         <li class="m-dropdown nav-item">
