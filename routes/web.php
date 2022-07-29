@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BaseController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OauthController;
@@ -22,9 +23,7 @@ use TCG\Voyager\Facades\Voyager;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [BaseController::class, 'index']);
 
 //Authentication
 Auth::routes();

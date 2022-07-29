@@ -129,7 +129,6 @@ input:focus {
   top: 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
-  z-index: 1;
 }
 
 .navigation .nav-link {
@@ -160,7 +159,7 @@ input:focus {
   min-width: 220px;
   overflow: hidden;
   box-shadow: 0px 8px 16px 0px rgba(126, 126, 126, 0.2);
-  z-index: 4;
+  z-index: 1;
 }
 
 .m-sub-dropbtn {

@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('product_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('slug')->nullable();
-            $table->integer('parent_id')->nullable();
-            $table->string('icon');
-            $table->string('description');
+            $table->integer('parent_id')->unsigned()->nullable()->default(null);
+            $table->foreign('parent_id')->references('id')->on('product_categories')->onUpdate('cascade')->onDelete('set null');
+            $table->string('icon')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

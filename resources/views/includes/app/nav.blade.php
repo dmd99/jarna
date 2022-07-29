@@ -6,6 +6,8 @@
             </div>
             <div class="col search-wrapper">
                 <input class="search-input" type="text" placeholder="Search">
+                <span>
+                Rechercher
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
                     stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     class="feather feather-search" viewBox="0 0 24 24">
@@ -13,6 +15,7 @@
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="M21 21l-4.35-4.35"></path>
                 </svg>
+                </span>
             </div>
             <div class="col d-flex justify-content-end align-items-center">
                 <img class="nav-icons" width="24px" height="24px" src="{{ asset('/images/icons/heart.svg') }}"
@@ -85,6 +88,7 @@
     </div>
     <div class="navigation">
         <nav class="container navbar navbar-expand-lg navbar-light">
+            <category-menu></category-menu>
             <div class="dropdown">
                 <button class="btn p-0 px-2 dropdown-toggle" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -92,9 +96,9 @@
                         alt="icons" />Categories
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Categorie 1</a></li>
-                    <li><a class="dropdown-item" href="#">Categorie 2</a></li>
-                    <li><a class="dropdown-item" href="#">Categorie 3</a></li>
+                    @foreach ($category as $categorie)
+                    <li><a class="dropdown-item" href="#"> {{$categorie->name}}</a></li>
+                    @endforeach
                 </ul>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
