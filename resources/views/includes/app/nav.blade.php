@@ -89,18 +89,6 @@
     <div class="navigation">
         <nav class="container navbar navbar-expand-lg navbar-light">
             <category-menu></category-menu>
-            <div class="dropdown">
-                <button class="btn p-0 px-2 dropdown-toggle" type="button" id="dropdownMenuButton1"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <img class="" width="24px" height="24px" src="{{ asset('/images/icons/list.svg') }}"
-                        alt="icons" />Categories
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    @foreach ($category as $categorie)
-                    <li><a class="dropdown-item" href="#"> {{$categorie->name}}</a></li>
-                    @endforeach
-                </ul>
-            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

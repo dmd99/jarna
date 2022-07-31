@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Seller\SellerController;
 use App\Http\Controllers\Shop\ShopController;
 use Illuminate\Auth\Access\Gate;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
@@ -66,3 +67,12 @@ Route::group([], function () {
     Route::get('/shops',[ShopController::class, 'shop']);
     Route::get('/shops/{shop}',[ShopController::class, 'showShop']);
 });
+
+/*
+
+    Route::get('/migrate',function(){
+        Artisan::call('migrate');
+    });
+
+*/
+

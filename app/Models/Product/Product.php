@@ -16,15 +16,13 @@ class Product extends Model
         'sku',
         'product_image',
         'product_details_id',
-        'gallery_id',
+        'product_categories_id',
         'price',
         'discount_price',
         'unit_id',
         'measurement_id',
-        'unpublished',
+        'status',
         'shop_id',
-        'tax_id',
-        'inventory_id',
         'product_views',
         'is_featured',
     ];
@@ -32,9 +30,28 @@ class Product extends Model
     {
         return $this->hasOne(ProductDetails::class);
     }
-    
+    public function taxes()
+    {
+        return $this->belongsTo(Tax::class, 'tax_id');
+    }
+    public function category()
+    {
+        return $this->belongsTo(ProductCategory::class, 'product_categories_id');
+    }
     public function shops()
     {
-        return $this->belongsTo(Shop::class);
+        return $this->belongsTo(Shop::class,'shop_id');
+    }
+    public function inventory()
+    {
+        return $this->belongsTo(Inventory::class);
+    }
+    public function measurement()
+    {
+        return $this->belongsTo(Measurement::class);
+    }
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class, 'unit_id');
     }
 }

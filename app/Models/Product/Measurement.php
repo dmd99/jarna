@@ -9,4 +9,8 @@ class Measurement extends Model
 {
     use HasFactory;
     protected $fillable = ['product_id','qts'];
+    public function product()
+    {
+        $this->hasOne(Product::class, 'product_id');
+    }
 }
